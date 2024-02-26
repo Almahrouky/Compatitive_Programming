@@ -19,6 +19,7 @@ void Almahrouky() {
 const int mod = 1e9 + 7;
 const int inf = 1e18;
 const int N = 2e5 + 5;
+bool power_of_2(int n) {return __builtin_popcountll(n)==1;}
 int add(int a, int b) {return ((a % mod) + (b % mod)) % mod;}
 int mul(int a, int b) {return ((a % mod) * (b % mod)) % mod;}
 int sub(int a, int b) {return ((a % mod) - (b % mod) + mod) % mod;}
@@ -46,9 +47,8 @@ int fast_power_iterative(int a, int b) {
 void sol() {
 
 }
-int32_t main() {
-    Almahrouky();
-    int t; cin >> t;
+int32_t main() { Almahrouky();
+    int t = 1; cin >> t;
     while (t--) {
         sol();
         cout << '\n';
