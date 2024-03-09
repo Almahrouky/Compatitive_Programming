@@ -39,7 +39,7 @@ int fast_power_iterative(int a, int b) {
     while (b > 0) {
         if (b & 1)
             ret *= a;
-        a = a * a;
+        a *= a;
         b /= 2;
     }
     return ret;
