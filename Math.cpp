@@ -1,13 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-#define int long long
-#define fr(n) for(int i = 0; i < n; ++i)
-#define frj(m) for(int j = 0; j < m; ++j)
-#define all(v) v.begin(), v.end()
-int dx[] = {0, -1, 0, 1, -1, 1, 1, -1};
-int dy[] = {1, 0, -1, 0, 1, 1, -1, -1};
-char di[] = {'R', 'U', 'L', 'D'};
+typedef long long ll; typedef long double ld;
+#define int       long long
+#define sz(v)     (long long)(v.size())
+#define fr(n)     for(int i = 0; i < n; ++i)
+#define frj(m)    for(int j = 0; j < m; ++j)
+#define all(v)    v.begin(), v.end()
+int dx[] = {0, 1, 0, -1, -1, 1, 1, -1}; int dy[] = {1, 0, -1, 0, 1, 1, -1, -1}; char di[] = {'R', 'D', 'L', 'U'};
 void Almahrouky() {
     ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
 #ifndef ONLINE_JUDGE
@@ -16,9 +15,8 @@ void Almahrouky() {
     freopen("error.txt", "w", stderr);
 #endif
 }
-const int mod = 1e9 + 7;
-const int inf = 1e18;
-const int N = 2e5 + 5;
+const int mod = 1e9 + 7, inf = 1e18, N = 2e5 + 1, M = 1e5 + 5;
+
 bool power_of_2(int n) {return __builtin_popcountll(n)==1;}
 int add(int a, int b) {return ((a % mod) + (b % mod)) % mod;}
 int mul(int a, int b) {return ((a % mod) * (b % mod)) % mod;}
@@ -45,7 +43,7 @@ int fast_power_iterative(int a, int b) {
     return ret;
 }
 void sol() {
-
+    
 }
 int32_t main() { Almahrouky();
     int t = 1; cin >> t;
@@ -53,6 +51,5 @@ int32_t main() { Almahrouky();
         sol();
         cout << '\n';
     }
-
     return 0;
 }
