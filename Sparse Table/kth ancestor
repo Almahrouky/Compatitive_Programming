@@ -1,3 +1,4 @@
+// O(log)
 #include <bits/stdc++.h>
 using namespace std;
 const int mod = 1e9 + 7, inf = 1e16, N = 2e5 + 7, M = 1e5 + 7, LG = 20;
