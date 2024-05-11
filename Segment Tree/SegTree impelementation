@@ -33,8 +33,10 @@ struct SegTree{
     void update(int ql, int qr, int v, int k, int sl, int sr){
         // if the segment is totaly inside the update range
         // ql == qr -> sl == sr
-        if(ql <= sl && sr <= qr)
+        if(ql <= sl && sr <= qr){
             tree[k] = v;
+            return ;
+        }
         if(ql > sr || sl > qr)
             return ;
         
