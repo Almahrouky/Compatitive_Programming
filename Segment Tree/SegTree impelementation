@@ -1,20 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+struct seg{
+    
+};
 struct segTree{
     vector<int>tree;
-    int oldN;
+    int n;
 
-    void build(int n, int *arr){
+    seg combine(seg left, seg right){
+        seg ret;
+        
+        return ret;
+    }
+
+    void build(int nn, int *arr){
         // if n is not a perfect power of 2
-        if(__builtin_popcount(n) != 1)
-            oldN = 1<<(__lg(n) + 1);
+        if(__builtin_popcount(nn) != 1)
+            n = 1<<(__lg(nn) + 1);
         else
-            oldN = n;
-        tree.resize(oldN << 1);
-        for(int i = 0; i < n; ++i)
-            tree[i + oldN] = arr[i];
-        for(int i = oldN - 1; i; --i)
+            n = nn;
+        tree.resize(n << 1);
+        for(int i = 0; i < nn; ++i)
+            tree[i + n] = arr[i];
+        for(int i = n - 1; i; --i)
             tree[i] = tree[i<<1] + tree[i<<1 | 1];
     }
 
