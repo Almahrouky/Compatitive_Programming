@@ -5,7 +5,7 @@ struct seg{
     
 };
 struct segTree{
-    vector<int>tree;
+    vector<seg>tree;
     int n;
 
     seg combine(seg left, seg right){
@@ -15,27 +15,28 @@ struct segTree{
     }
 
     void build(int nn, int *arr){
-        // if n is not a perfect power of 2
         if(__builtin_popcount(nn) != 1)
             n = 1<<(__lg(nn) + 1);
         else
             n = nn;
-        tree.resize(n << 1);
+
+        tree.resize(n<<1);
         for(int i = 0; i < nn; ++i)
-            tree[i + n] = arr[i];
-        for(int i = n - 1; i; --i)
-            tree[i] = tree[i<<1] + tree[i<<1 | 1];
+            tree[i + n] = seg(arr[i]);
+        for(int i = nn; i < n; ++i)
+            tree[i] = seg();
+        for(int i = n - 1; i ; --i)
+            tree[i] = combine(tree[i<<1], tree[i<<1 | 1]);
     }
 
-    int query(int ql, int qr, int k, int sl, int sr){
-        // if the segment is totaly inside the query
+    seg query(int ql, int qr, int k, int sl, int sr){
         if(ql <= sl && sr <= qr)
             return tree[k];
         if(ql > sr || sl > qr)
-            return 0;
+            return seg();
         
         int mid = (sl + sr)/2;
-        return query(ql, qr, k<<1, sl, mid) + query(ql, qr, k<<1 | 1, mid + 1, sr);
+        return combine(query(ql, qr, k<<1, sl, mid), query(ql, qr, k<<1 | 1, mid + 1, sr));
     }
 
     // point update
@@ -43,7 +44,7 @@ struct segTree{
         // if the segment is totaly inside the update range
         // ql == qr -> sl == sr
         if(ql <= sl && sr <= qr){
-            tree[k] = v;
+            tree[k] = seg(v);
             return ;
         }
         if(ql > sr || sl > qr)
@@ -52,7 +53,7 @@ struct segTree{
         int mid = (sl + sr)/2;
         update(ql, qr, v, k<<1, sl, mid);
         update(ql, qr, v, k<<1 | 1, mid + 1, sr);
-        tree[k] = tree[k<<1] + tree[k<<1 | 1];
+        tree[k] = combine(tree[k<<1], tree[k<<1 | 1]);
     }
 };
 
