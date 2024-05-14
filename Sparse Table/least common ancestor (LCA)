@@ -1,4 +1,5 @@
 // O(log * log)
+// 1-base tree
 #include <bits/stdc++.h>
 using namespace std;
 const int mod = 1e9 + 7, inf = 1e9, N = 2e5 + 7, M = 1e5 + 7, LG = 20;
