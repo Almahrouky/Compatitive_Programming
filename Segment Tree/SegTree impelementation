@@ -60,6 +60,16 @@ struct segTree{
         update(ql, qr, v, k<<1 | 1, mid + 1, sr);
         tree[k] = combine(tree[k<<1], tree[k<<1 | 1]);
     }
+    int binWalk(int v, int k, int sl, int sr){
+        if(sl == sr) // leaf
+            return sl; // or k - n
+ 
+        int mid = (sl + sr)/2;
+        if(tree[k<<1] >= v)
+            return binWalk(v, k<<1,sl, mid);
+        else
+            return binWalk(v - tree[k<<1], k<<1 | 1, mid + 1, sr);
+    }
 };
 
 int main() {
