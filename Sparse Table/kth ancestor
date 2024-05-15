@@ -1,7 +1,7 @@
 // O(log)
 #include <bits/stdc++.h>
 using namespace std;
-const int mod = 1e9 + 7, inf = 1e16, N = 2e5 + 7, M = 1e5 + 7, LG = 20;
+const int mod = 1e9 + 7, inf = 1e16, N = 2e5 + 7, M = 1e5 + 7, LG = 20; // LG = 20 if N up to 1e6
 // anc[i][k] is the 2^kth ancestor of node i
 int n;
 int p[N];
