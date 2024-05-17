@@ -62,7 +62,10 @@ struct segTree{
     }
     int binWalk(int v, int k, int sl, int sr){
         if(sl == sr) // leaf
-            return sl; // or k - n
+            if()  // because if initial size is 1
+                return ;
+            else
+                return ;
  
         int mid = (sl + sr)/2;
         if(tree[k<<1] >= v)
