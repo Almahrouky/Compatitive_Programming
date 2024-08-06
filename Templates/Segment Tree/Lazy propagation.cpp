@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 struct segTree{
     vector<int>tree;
     vector<int>lazy;
@@ -67,8 +64,3 @@ struct segTree{
         tree[k] = combine(tree[k<<1], tree[k<<1 | 1]);
     }
 };
-int main() {
-    ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
-    
-    return 0;
-}

@@ -1,7 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
 #define int long long
+typedef long long ll;
+const int mod = 1e9 + 7;
+const int inf = 1e18;
+const int N = 2e5 + 5;
+const int N = 1 << 18, M = N, mod = 1e9 + 7;
 struct BIT {
 	int tree[N];
 
@@ -51,35 +55,3 @@ struct MultiSet {
 
 	int at(int idx) { return bit.find(idx); }
 };
-#define fr(n) for(int i = 0; i < n; ++i)
-#define frj(m) for(int j = 0; j < m; ++j)
-#define all(v) v.begin(), v.end()
-int dx[] = {0, -1, 0, 1, -1, 1, 1, -1};
-int dy[] = {1, 0, -1, 0, 1, 1, -1, -1};
-char di[] = {'R', 'U', 'L', 'D'};
-void Almahrouky() {
-	ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
-#ifndef ONLINE_JUDGE
-	freopen("in.txt", "rt", stdin);
-	freopen("out.txt", "wt", stdout);
-	freopen("error.txt", "w", stderr);
-#endif
-}
-const int mod = 1e9 + 7;
-const int inf = 1e18;
-const int N = 2e5 + 5;
-const int N = 1 << 18, M = N, OO = 0x3f3f3f3f, MOD = 1e9 + 7;
-
-void sol() {
-
-}
-int32_t main() {
-	Almahrouky();
-	int t; cin >> t;
-	while (t--) {
-		sol();
-		cout << '\n';
-	}
-
-	return 0;
-}

@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 struct seg{
     seg(){
 
@@ -74,9 +71,3 @@ struct segTree{
             return binWalk(v - tree[k<<1], k<<1 | 1, mid + 1, sr);
     }
 };
-
-int main() {
-    ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
-    
-    return 0;
-}
